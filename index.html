@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>d2h.net: flotsam, jetsam, &amp; lagan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="thoughts, observations, diary, rants, stuff the virtual cat dragged in…" />
+  <meta name="author" content="Dirk Husemann" />
+  <meta name="generator" content="Hugo 0.91.2" />
+  <link href="https://d2h.net/index.xml" rel="alternate" type="application/rss+xml" title="d2h.net: flotsam, jetsam, &amp; lagan Feed" />
+  <link rel="stylesheet" href="https://d2h.net/style.12b230170c0d1aa4ede2e7171129a943c85cf07c6c7fef685e04b0db198a6453.css" />
+  <script defer src="https://d2h.net/script.5239f359e84e29304331105377f7c48412ff823b1f4aafe4a0291e3da5ed633b.js"></script>
+</head>
+<body>
+<div class="pure-g">
+  <div class="pure-u-1-24 pure-u-md-5-24"></div>
+  <div class="pure-u-22-24 pure-u-md-14-24">
+  
+<div class="navigation">
+  <div class="navigation-header clearfix">
+    <div class="pure-menu pure-menu-horizontal">
+      <a class="pure-menu-heading pure-menu-link" href="https://d2h.net/">
+        d2h.net: flotsam, jetsam, &amp; lagan
+      </a>
+      <ul class="pure-menu-list navigation-header-subtitle pull-end">
+        <li class="pure-menu-item pure-menu-disabled">
+          <span class="pure-menu-link">thoughts, observations, diary, rants, stuff the virtual cat dragged in…</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="navigation-content">
+    <div class="pure-menu pure-menu-horizontal">
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item" title="All posts">
+          <a  class="pure-menu-link" href="https://d2h.net/posts/">Posts</a>
+        </li>
+        <li class="pure-menu-item" title="All recipes">
+          <a  class="pure-menu-link" href="https://d2h.net/series/">Recipes</a>
+        </li>
+        <li class="pure-menu-item" title="All tags">
+          <a  class="pure-menu-link" href="https://d2h.net/tags/">Tags</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  
+<div>
+  <div>
+    <h2 class="post-title">
+      
+      <a href="https://d2h.net/posts/2019-12-27/">building emacs for macos</a>
+    </h2>
+    
+<div class="post-meta">
+  <span>Date</span> &#x5b;
+    <time datetime="2019-12-27T14:53:00&#43;01:00">
+      2019-12-27 14:53:00 CET
+    </time>
+  &#x5d;
+</div>
+
+  </div>
+  <div>
+    <p>my copy of emacs installed through <a href="https://brew.sh/">homebrew</a> was acting up: everytime i tried to click the &ldquo;markdown&rdquo; menu when editing a markdown&rsquo;ed text file, emacs would terminate rather abruptly (aka crash). decidedly not nice.</p>
+<p>so: try to reinstall… a couple of hours later this is the recipe that worked for me:</p>
+<pre><code>&gt; brew install --with-modern-icon --without-spacemacs-icon --with-mailutils --with-jansson --HEAD emacs-plus
+</code></pre>
+<p>followed by</p>
+<ul>
+<li>option-cmd dragging the generated <code>/usr/local/opt/emacs-plus/Emacs.app</code> to <code>/Applications</code>, and</li>
+<li>allowing <code>Emacs</code> full-disk access</li>
+</ul>
+<figure><img src="https://d2h.net/posts/2019-12-27/settings-emacs.png" width="400"/><figcaption>
+            <h4>macos security setings for emacs</h4>
+        </figcaption>
+</figure>
+
+
+  </div>
+</div>
+<div class="post-divider">
+  <div>
+    <h2 class="post-title">
+      
+      <a href="https://d2h.net/posts/2019-06-14/">automated hugo</a>
+    </h2>
+    
+<div class="post-meta">
+  <span>Date</span> &#x5b;
+    <time datetime="2019-06-14T08:26:10&#43;02:00">
+      2019-06-14 08:26:10 CEST
+    </time>
+  &#x5d;
+</div>
+
+  </div>
+  <div>
+    <p>Inspired by <a href="http://evanbrown.io/post/hugo-on-the-go/">Evan Brown&rsquo;s post <em>Hugo on the go</em></a> I decided to follow pretty much the same route &mdash; with a couple of twists.</p>
+<p>In a nutshell Evan has set up a continuous integration chain for his <a href="https://gohugo.io/">hugo</a> based website. The workflow is as follows:</p>
+<ul>
+<li>create the new hugo post on whatever device you want</li>
+<li>commit the post and push to github</li>
+<li>github triggers the continuous integration service travis</li>
+<li>travis regenerates the static web site</li>
+<li>travis deploys the static web site</li>
+</ul>
+<p>Where Evan is using github, travis, and S3 I wanted to go the self-hosted route. So,</p>
+<ul>
+<li>instead of github I&rsquo;m using a self-hosted, dockerized <a href="https://gitea.io/en-us/">gitea</a> instance to host my git repos</li>
+<li>instead of travis I&rsquo;m using a self-hosted, dockerized <a href="https://drone.io/">drone</a> instance for the continuous integration part</li>
+<li>instead of S3 I&rsquo;m deploying to my own web server.</li>
+</ul>
+<p>The workflow then looks like this:</p>
+<figure><img src="https://d2h.net/posts/2019-06-14/gitea-drone-hugo.png" width="640"/><figcaption>
+            <h4>gitea — drone — hugo workflow</h4>
+        </figcaption>
+</figure>
+
+<p>For editing and creating new posts I do use <a href="https://workingcopyapp.com/">Working Copy</a> &mdash; same as Evan is.</p>
+
+  </div>
+</div>
+<div class="post-divider">
+  <div>
+    <h2 class="post-title">
+      
+      <a href="https://d2h.net/posts/switching_to_hugo/">Full Circle</a>
+    </h2>
+    
+<div class="post-meta">
+  <span>Date</span> &#x5b;
+    <time datetime="2019-05-19T16:53:29&#43;02:00">
+      2019-05-19 16:53:29 CEST
+    </time>
+  &#x5d;
+</div>
+
+  </div>
+  <div>
+    <p>OK, I&rsquo;m back to where I started, blog-wise: statically generated content. The first incarnation of d2h.net was using an emacs generated blog, this time round I&rsquo;ve ended up with using <a href="https://gohugo.io/">hugo</a>.</p>
+<p>The workflow is a bit different now from back then: content is contained in a self-hosted <a href="https://gitea.io/en-us/">gitea</a> instance, which is feeding into a self-hosted <a href="https://drone.io">drone</a> instance, all docker-ized.</p>
+<p>The hugo theme is not quite there yet, expect changes 😀</p>
+
+  </div>
+</div>
+
+  <div class="pagination-content">
+    <div class="pure-menu pure-menu-horizontal">
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item pure-menu-disabled">
+          Pages
+        </li>
+        <li class="pure-menu-item pure-menu-selected">
+          <a href="https://d2h.net/" class="pure-menu-link">First</a>
+        </li>
+        <li class="pure-menu-item pure-menu-selected">
+          <a href="https://d2h.net/" class="pure-menu-link">Last</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+  <div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item" title="Theme repository">
+        <a class="pure-menu-link" href="https://github.com/spookey/slick">GitHub</a>
+      </li>
+      <li class="pure-menu-item" title="Theme page on gohugo.io">
+        <a class="pure-menu-link" href="https://themes.gohugo.io/slick">Slick</a>
+      </li>
+      <li class="pure-menu-item" title="About">
+        <a class="pure-menu-link" href="https://d2h.net/about">About</a>
+      </li>
+      <li class="pure-menu-item" title="RSS Feed">
+        <a href="https://d2h.net/index.xml" class="pure-menu-link">RSS</a>
+      </li>
+      <li class="pure-menu-item fix-cursor-pointer" title="Go to top">
+        <a class="pure-menu-link" id="btn-gototop">
+          <span class="fix-placement-up">&#x21e7;&#xfe0e;</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item pure-menu-disabled">
+        &copy; 2022 &mdash; Dirk Husemann — All rights reserved.
+      </li>
+    </ul>
+  </div>
+</div>
+
+  </div>
+  <div class="pure-u-1-24 pure-u-md-5-24"></div>
+</div>
+</body>
+</html>
