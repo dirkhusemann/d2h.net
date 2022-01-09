@@ -1,77 +1,8 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Posts on d2h.net: flotsam, jetsam, &amp; lagan</title>
-		<link>https://d2h.net/posts/</link>
-		<description>Recent content in Posts on d2h.net: flotsam, jetsam, &amp; lagan</description>
-		<generator>Hugo 0.91.2 -- gohugo.io</generator>
-		<language>en</language>
-		<managingEditor>dirk@d2h.net (Dirk Husemann)</managingEditor>
-		<webMaster>dirk@d2h.net (Dirk Husemann)</webMaster>
-		<copyright>Dirk Husemann — All rights reserved.</copyright>
-		<lastBuildDate>Fri, 27 Dec 2019 14:53:00 +0100</lastBuildDate>
-		<atom:link href="https://d2h.net/posts/index.xml" rel="self" type="application/rss+xml" />
-		<item>
-			<title>building emacs for macos</title>
-			<link>https://d2h.net/posts/2019-12-27/</link>
-			<pubDate>Fri, 27 Dec 2019 14:53:00 +0100</pubDate>
-			<author>dirk@d2h.net (Dirk Husemann)</author>
-			<guid isPermaLink="true">https://d2h.net/posts/2019-12-27/</guid>
-			<description>&lt;p&gt;my copy of emacs installed through &lt;a href=&#34;https://brew.sh/&#34;&gt;homebrew&lt;/a&gt; was acting up: everytime i tried to click the &amp;ldquo;markdown&amp;rdquo; menu when editing a markdown&amp;rsquo;ed text file, emacs would terminate rather abruptly (aka crash). decidedly not nice.&lt;/p&gt;
-&lt;p&gt;so: try to reinstall… a couple of hours later this is the recipe that worked for me:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; brew install --with-modern-icon --without-spacemacs-icon --with-mailutils --with-jansson --HEAD emacs-plus
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;followed by&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;option-cmd dragging the generated &lt;code&gt;/usr/local/opt/emacs-plus/Emacs.app&lt;/code&gt; to &lt;code&gt;/Applications&lt;/code&gt;, and&lt;/li&gt;
-&lt;li&gt;allowing &lt;code&gt;Emacs&lt;/code&gt; full-disk access&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://d2h.net/posts/2019-12-27/settings-emacs.png&#34; width=&#34;400&#34;/&gt;&lt;figcaption&gt;
-            &lt;h4&gt;macos security setings for emacs&lt;/h4&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-</description>
-		</item>
-		<item>
-			<title>automated hugo</title>
-			<link>https://d2h.net/posts/2019-06-14/</link>
-			<pubDate>Fri, 14 Jun 2019 08:26:10 +0200</pubDate>
-			<author>dirk@d2h.net (Dirk Husemann)</author>
-			<guid isPermaLink="true">https://d2h.net/posts/2019-06-14/</guid>
-			<description>&lt;p&gt;Inspired by &lt;a href=&#34;http://evanbrown.io/post/hugo-on-the-go/&#34;&gt;Evan Brown&amp;rsquo;s post &lt;em&gt;Hugo on the go&lt;/em&gt;&lt;/a&gt; I decided to follow pretty much the same route &amp;mdash; with a couple of twists.&lt;/p&gt;
-&lt;p&gt;In a nutshell Evan has set up a continuous integration chain for his &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt; based website. The workflow is as follows:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;create the new hugo post on whatever device you want&lt;/li&gt;
-&lt;li&gt;commit the post and push to github&lt;/li&gt;
-&lt;li&gt;github triggers the continuous integration service travis&lt;/li&gt;
-&lt;li&gt;travis regenerates the static web site&lt;/li&gt;
-&lt;li&gt;travis deploys the static web site&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Where Evan is using github, travis, and S3 I wanted to go the self-hosted route. So,&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;instead of github I&amp;rsquo;m using a self-hosted, dockerized &lt;a href=&#34;https://gitea.io/en-us/&#34;&gt;gitea&lt;/a&gt; instance to host my git repos&lt;/li&gt;
-&lt;li&gt;instead of travis I&amp;rsquo;m using a self-hosted, dockerized &lt;a href=&#34;https://drone.io/&#34;&gt;drone&lt;/a&gt; instance for the continuous integration part&lt;/li&gt;
-&lt;li&gt;instead of S3 I&amp;rsquo;m deploying to my own web server.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The workflow then looks like this:&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://d2h.net/posts/2019-06-14/gitea-drone-hugo.png&#34; width=&#34;640&#34;/&gt;&lt;figcaption&gt;
-            &lt;h4&gt;gitea — drone — hugo workflow&lt;/h4&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;For editing and creating new posts I do use &lt;a href=&#34;https://workingcopyapp.com/&#34;&gt;Working Copy&lt;/a&gt; &amp;mdash; same as Evan is.&lt;/p&gt;
-</description>
-		</item>
-		<item>
-			<title>Full Circle</title>
-			<link>https://d2h.net/posts/switching_to_hugo/</link>
-			<pubDate>Sun, 19 May 2019 16:53:29 +0200</pubDate>
-			<author>dirk@d2h.net (Dirk Husemann)</author>
-			<guid isPermaLink="true">https://d2h.net/posts/switching_to_hugo/</guid>
-			<description>&lt;p&gt;OK, I&amp;rsquo;m back to where I started, blog-wise: statically generated content. The first incarnation of d2h.net was using an emacs generated blog, this time round I&amp;rsquo;ve ended up with using &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The workflow is a bit different now from back then: content is contained in a self-hosted &lt;a href=&#34;https://gitea.io/en-us/&#34;&gt;gitea&lt;/a&gt; instance, which is feeding into a self-hosted &lt;a href=&#34;https://drone.io&#34;&gt;drone&lt;/a&gt; instance, all docker-ized.&lt;/p&gt;
-&lt;p&gt;The hugo theme is not quite there yet, expect changes 😀&lt;/p&gt;
-</description>
-		</item>
-	</channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on d2h.net: flotsam, jetsam, &amp; lagan</title><link>https://d2h.net/posts/</link><description>Recent content in Posts on d2h.net: flotsam, jetsam, &amp; lagan</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>dirk@d2h.net (Dirk Husemann)</managingEditor><webMaster>dirk@d2h.net (Dirk Husemann)</webMaster><copyright>Dirk Husemann — All rights reserved.</copyright><lastBuildDate>Fri, 27 Dec 2019 14:53:00 +0100</lastBuildDate><atom:link href="https://d2h.net/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>building emacs for macos</title><link>https://d2h.net/posts/2019-12-27/</link><pubDate>Fri, 27 Dec 2019 14:53:00 +0100</pubDate><author>dirk@d2h.net (Dirk Husemann)</author><guid>https://d2h.net/posts/2019-12-27/</guid><description>my copy of emacs installed through homebrew was acting up: everytime i tried to click the &amp;ldquo;markdown&amp;rdquo; menu when editing a markdown&amp;rsquo;ed text file, emacs would terminate rather abruptly (aka crash). decidedly not nice.
+so: try to reinstall… a couple of hours later this is the recipe that worked for me:
+&amp;gt; brew install --with-modern-icon --without-spacemacs-icon --with-mailutils --with-jansson --HEAD emacs-plus followed by
+option-cmd dragging the generated /usr/local/opt/emacs-plus/Emacs.app to /Applications, and allowing Emacs full-disk access macos security setings for emacs</description></item><item><title>automated hugo</title><link>https://d2h.net/posts/2019-06-14/</link><pubDate>Fri, 14 Jun 2019 08:26:10 +0200</pubDate><author>dirk@d2h.net (Dirk Husemann)</author><guid>https://d2h.net/posts/2019-06-14/</guid><description>Inspired by Evan Brown&amp;rsquo;s post Hugo on the go I decided to follow pretty much the same route &amp;mdash; with a couple of twists.
+In a nutshell Evan has set up a continuous integration chain for his hugo based website. The workflow is as follows:
+create the new hugo post on whatever device you want commit the post and push to github github triggers the continuous integration service travis travis regenerates the static web site travis deploys the static web site Where Evan is using github, travis, and S3 I wanted to go the self-hosted route.</description></item><item><title>Full Circle</title><link>https://d2h.net/posts/switching_to_hugo/</link><pubDate>Sun, 19 May 2019 16:53:29 +0200</pubDate><author>dirk@d2h.net (Dirk Husemann)</author><guid>https://d2h.net/posts/switching_to_hugo/</guid><description>OK, I&amp;rsquo;m back to where I started, blog-wise: statically generated content. The first incarnation of d2h.net was using an emacs generated blog, this time round I&amp;rsquo;ve ended up with using hugo.
+The workflow is a bit different now from back then: content is contained in a self-hosted gitea instance, which is feeding into a self-hosted drone instance, all docker-ized.
+The hugo theme is not quite there yet, expect changes 😀</description></item></channel></rss>

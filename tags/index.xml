@@ -1,13 +1,1 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Tags on d2h.net: flotsam, jetsam, &amp; lagan</title>
-		<link>https://d2h.net/tags/</link>
-		<description>Recent content in Tags on d2h.net: flotsam, jetsam, &amp; lagan</description>
-		<generator>Hugo 0.91.2 -- gohugo.io</generator>
-		<language>en</language>
-		<managingEditor>dirk@d2h.net (Dirk Husemann)</managingEditor>
-		<webMaster>dirk@d2h.net (Dirk Husemann)</webMaster>
-		<copyright>Dirk Husemann — All rights reserved.</copyright>
-		<atom:link href="https://d2h.net/tags/index.xml" rel="self" type="application/rss+xml" />
-	</channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on d2h.net: flotsam, jetsam, &amp; lagan</title><link>https://d2h.net/tags/</link><description>Recent content in Tags on d2h.net: flotsam, jetsam, &amp; lagan</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>dirk@d2h.net (Dirk Husemann)</managingEditor><webMaster>dirk@d2h.net (Dirk Husemann)</webMaster><copyright>Dirk Husemann — All rights reserved.</copyright><atom:link href="https://d2h.net/tags/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
