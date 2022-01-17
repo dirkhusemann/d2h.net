@@ -3,6 +3,7 @@ body {
     max-width: 750px;
     margin: 0 auto;
     padding: 10px;
+    text-transform: lowercase;
 }
 #brand {
     display: flex;
