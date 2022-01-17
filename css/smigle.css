@@ -57,7 +57,7 @@ header nav {
     list-style: none;
 }
 #postsByDate .date {
-    width: 60px;
+    width: 90px;
 }
 #postsByDate div, #postsInOneGroup div {
     display: inline-block;
