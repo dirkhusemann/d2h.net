@@ -1,0 +1,80 @@
+body {
+    font-family: Iosevka, monospace;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 10px;
+    text-transform: lowercase;
+}
+#brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#brand .text {
+    margin-left: 20px;
+}
+
+#brand a {
+    color: var(--fontcolor);
+    text-decoration: none;
+}
+#brand h1, #brand h3 {
+    margin: 0;
+}
+#brand h1 {
+    font-size: 30px;
+    font-family: SpecialElite;
+}
+#brand h3 {
+    font-size: 18px;
+    font-weight: normal;
+    font-family: SpecialElite;
+}
+#brand .icon {
+    width: 200px;
+}
+footer {
+    margin-top: 30px;
+}
+header nav {
+    margin: 15px 0;
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    body {
+	margin-top: 25px;
+    }
+    #brand {
+	flex-direction: row;
+	text-align: unset;
+    }
+    #brand .text {
+	margin-left: 10px;
+    }
+}
+#postsByDate  {
+    list-style: none;
+}
+#postsByDate .date {
+    width: 90px;
+}
+#postsByDate div, #postsInOneGroup div {
+    display: inline-block;
+}
+#terms {
+    list-style: none;
+}
+#terms .term {
+    background-color: #ddd;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 2px;
+    padding: 8px;
+}
+
+h1, h2, h3 {
+    font-family: SpecialElite;
+}
+
