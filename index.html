@@ -36,6 +36,45 @@
 <div id=content>
 <main>
 <article>
+<h1 class=post-title><a href=https://d2h.net/posts/2022-01-19-githubbing/>githubbing</a></h1>
+<div class=post-meta>
+<strong>
+<span>Posted on</span>
+<time>2022-01-19 21:17:10 +0200</time>
+</strong>
+<span> • 246 words</span>
+<span> • 2 minute read</span>
+</div>
+<div class=post-body>
+<p><p>I recently read the excellent essay <em><a href=https://moxie.org/2022/01/07/web3-first-impressions.html>my first impressions of web3</a></em> by <a href=https://moxie.org>moxie marlinspike</a>, and one of the observations he is making is<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></p>
+<blockquote>
+<p>People don’t want to run their own servers, and never will.</p>
+</blockquote>
+<p>Running your own server is fun and very instructional &mdash; for geeks like us…</p>
+<p>…for a time…</p>
+<p>…after about 20 years or so you&rsquo;ve seen it all, done it all, tried it all, met all the script kiddies in your logs, evaded them by moving your SSH server port out of harm&rsquo;s way (not that you were using password-based ssh accounts to begin with, it was just so annoying to see them try the same thing over and over again, no creativity really, come on…), dito for the attack attempts on your nginx server (again, easily foiled, by using a handful of <code>fail2ban</code> rules).</p>
+<p>So… I&rsquo;ve been thinking about shifting my web stuff. For my photography stuff I&rsquo;ve been starting to make more use of my <a href=https://www.flickr.com/photos/50mm-traveller/>flickr account</a>. For my blogs I have now setup two github repositories:</p>
+<ul>
+<li>a private &ldquo;factory&rdquo; repository which really contains the source and mechanics of the blog, and</li>
+<li>the public repository mapped to my <code>d2h.net</code> domain.</li>
+</ul>
+<p>The factory repo uses <a href=https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-deploy-to-external-repository-external_repository>github actions</a> to build the blog using extended hugo and then to deploy to the public repo &mdash; similar to my <a href=https://d2h.net/posts/2019-06-14-gitea-drone-hugo/>earlier gitea automated setup</a>:</p>
+<figure><img src=https://d2h.net/posts/2022-01-21-factory-d2h.net.png width=640><figcaption>
+<h4>github -- hugo workflow</h4>
+</figcaption>
+</figure>
+<section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p>Moxie takes a critical look at that latest con-game, &ldquo;web3&rdquo; and really takes that idea apart; recommended reading.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</p>
+</div>
+</article>
+<article>
 <h1 class=post-title><a href=https://d2h.net/posts/2019-12-27-emacs-for-macos/>building emacs for macos</a></h1>
 <div class=post-meta>
 <strong>

@@ -1,0 +1,94 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="thoughts, observations, diary, rants, stuff the virtual cat dragged in…">
+<title>githubbing | d2h.net: flotsam, jetsam, & lagan</title>
+<link rel=stylesheet href=https://d2h.net/css/reset.ff2d4ee9b996db408efb1000ebbb2c5edf24ccd51aeac0c57672c1682066b90e.css integrity="sha256-/y1O6bmW20CO+xAA67ssXt8kzNUa6sDFdnLBaCBmuQ4=">
+<link rel=stylesheet href=https://d2h.net/css/font.87897cbb4545df39e746fa5543bdef5041462d7a537ec1eb5d438e515ba397ce.css integrity="sha256-h4l8u0VF3znnRvpVQ73vUEFGLXpTfsHrXUOOUVujl84=">
+<link rel=stylesheet href=https://d2h.net/css/smigle.f10f4ca3bd678680c899c024f03c4bb2aba9ed7f36bb19ead4c459c932064fc5.css integrity="sha256-8Q9Mo71nhoDImcAk8DxLsqup7X82uxnq1MRZyTIGT8U=">
+<link rel=icon sizes=32x32 href=https://d2h.net/favicon.ico>
+<link rel=manifest href=https://d2h.net/site.webmanifest>
+<meta name=msapplication-TileColor content="#da532c">
+<meta name=theme-color content="#ffffff">
+</head>
+<body>
+<header>
+<div id=brand>
+<a class=icon-link href=https://d2h.net/>
+<img class=icon src=https://d2h.net/images/d2h.net-logo.gif>
+</a>
+<div class=text>
+<a href=https://d2h.net/><h1>d2h.net: flotsam, jetsam, & lagan</h1></a>
+<h3>thoughts, observations, diary, rants, stuff the virtual cat dragged in…</h3>
+</div>
+</div>
+<nav>
+<a href=https://d2h.net/posts/><b>Posts</b></a>
+|
+<a href=https://d2h.net/tags/><b>Tags</b></a>
+|
+<a href=https://d2h.net/about/><b>About</b></a>
+</nav>
+<hr>
+</header>
+<div id=content>
+<main>
+<article>
+<h1>githubbing</h1>
+<div class=post-meta>
+<strong>
+<span>Posted on</span>
+<time>2022-01-19 21:17:10 +0200</time>
+</strong>
+<span> • 246 words</span>
+<span> • 2 minute read</span>
+</div>
+<div><p>I recently read the excellent essay <em><a href=https://moxie.org/2022/01/07/web3-first-impressions.html>my first impressions of web3</a></em> by <a href=https://moxie.org>moxie marlinspike</a>, and one of the observations he is making is<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></p>
+<blockquote>
+<p>People don’t want to run their own servers, and never will.</p>
+</blockquote>
+<p>Running your own server is fun and very instructional &mdash; for geeks like us…</p>
+<p>…for a time…</p>
+<p>…after about 20 years or so you&rsquo;ve seen it all, done it all, tried it all, met all the script kiddies in your logs, evaded them by moving your SSH server port out of harm&rsquo;s way (not that you were using password-based ssh accounts to begin with, it was just so annoying to see them try the same thing over and over again, no creativity really, come on…), dito for the attack attempts on your nginx server (again, easily foiled, by using a handful of <code>fail2ban</code> rules).</p>
+<p>So… I&rsquo;ve been thinking about shifting my web stuff. For my photography stuff I&rsquo;ve been starting to make more use of my <a href=https://www.flickr.com/photos/50mm-traveller/>flickr account</a>. For my blogs I have now setup two github repositories:</p>
+<ul>
+<li>a private &ldquo;factory&rdquo; repository which really contains the source and mechanics of the blog, and</li>
+<li>the public repository mapped to my <code>d2h.net</code> domain.</li>
+</ul>
+<p>The factory repo uses <a href=https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-deploy-to-external-repository-external_repository>github actions</a> to build the blog using extended hugo and then to deploy to the public repo &mdash; similar to my <a href=https://d2h.net/posts/2019-06-14-gitea-drone-hugo/>earlier gitea automated setup</a>:</p>
+<figure><img src=https://d2h.net/posts/2022-01-21-factory-d2h.net.png width=640><figcaption>
+<h4>github -- hugo workflow</h4>
+</figcaption>
+</figure>
+<section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p>Moxie takes a critical look at that latest con-game, &ldquo;web3&rdquo; and really takes that idea apart; recommended reading.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+</article>
+</main>
+</div>
+<footer>
+<hr>
+<p class=copyright>
+Copyright © 2022
+<a href=https://d2h.net/><strong>Dirk Husemann</strong></a>.
+This work is licensed under the
+<a href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA 4.0</a> license.
+</p>
+<p class=builtWith>
+Built with
+<a href=http://www.gohugo.io/>Hugo</a>,
+using the theme
+<a href=https://gitlab.com/ian-s-mcb/smigle-hugo-theme>smigle</a>,
+which was influenced by the theme
+<a href=https://github.com/sumnerevans/smol>smol</a>.
+</p>
+</footer>
+</body>
+</html>
