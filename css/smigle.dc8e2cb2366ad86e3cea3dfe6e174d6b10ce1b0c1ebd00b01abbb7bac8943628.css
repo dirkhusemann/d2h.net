@@ -60,6 +60,11 @@ header nav {
 }
 #postsByDate .date {
     width: 90px;
+    vertical-align: top;
+}
+#postsByDate .title {
+    width: 500px;
+    vertical-align: top;
 }
 #postsByDate div, #postsInOneGroup div {
     display: inline-block;
