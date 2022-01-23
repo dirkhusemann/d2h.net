@@ -1,0 +1,104 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="thoughts, observations, diary, rants, stuff the virtual cat dragged in…">
+<title>the joys of creative commons licenses | d2h.net: flotsam, jetsam, & lagan</title>
+<link rel=stylesheet href=https://d2h.net/css/reset.b80b749c1c93b3d2d30ec1a4f12179fdec32be3cd52fd29c323a7224cb375cc9.css integrity="sha256-uAt0nByTs9LTDsGk8SF5/ewyvjzVL9KcMjpyJMs3XMk=">
+<link rel=stylesheet href=https://d2h.net/css/font.3b00f5c4609ba0cf0211d01656d84444e1fd83632b0c1b51f3d7b54e7d5cd9a8.css integrity="sha256-OwD1xGCboM8CEdAWVthEROH9g2MrDBtR89e1Tn1c2ag=">
+<link rel=stylesheet href=https://d2h.net/css/smigle.dc8e2cb2366ad86e3cea3dfe6e174d6b10ce1b0c1ebd00b01abbb7bac8943628.css integrity="sha256-3I4ssjZq2G486j3+bhdNaxDOGwwevQCwGru3usiUNig=">
+<link rel=icon sizes=32x32 href=https://d2h.net/favicon.ico>
+<link rel=manifest href=https://d2h.net/site.webmanifest>
+<meta name=msapplication-TileColor content="#da532c">
+<meta name=theme-color content="#ffffff">
+</head>
+<body>
+<header>
+<div id=brand>
+<a class=icon-link href=https://d2h.net/>
+<img class=icon src=https://d2h.net/images/d2h.net-logo.gif>
+</a>
+<div class=text>
+<a href=https://d2h.net/><h1>d2h.net: flotsam, jetsam, & lagan</h1></a>
+<h3>thoughts, observations, diary, rants, stuff the virtual cat dragged in…</h3>
+</div>
+</div>
+<nav>
+<a href=https://d2h.net/posts/><b>Posts</b></a>
+|
+<a href=https://d2h.net/tags/><b>Tags</b></a>
+|
+<a href=https://d2h.net/about/><b>About</b></a>
+</nav>
+<hr>
+</header>
+<div id=content>
+<main>
+<article>
+<h1>the joys of creative commons licenses</h1>
+<div class=post-meta>
+<strong>
+<span>Posted on</span>
+<time>2012-01-02 15:36:29 UTC</time>
+</strong>
+<span> • 353 words</span>
+<span> • 2 minute read</span>
+<div>
+<span>Tags:</span>
+<a href=https://d2h.net/tags/photography>photography</a>,
+<a href=https://d2h.net/tags/creative-commons>creative commons</a>,
+<a href=https://d2h.net/tags/music>music</a>
+</div>
+</div>
+<div><p><img src=http://d2h.net/stuff/Screen-Shot-2012-01-02-at-16.41.37--288x138.png alt="Screen Shot 2012-01-02 at 16.41.37" title="Screen Shot 2012-01-02 at 16.41.37"><br>
+i’m in the process of re-working both <a href=http://d2h.net>this blog</a> and my <a href=http://photos.d2h.net>photo site</a>. for the photo site i’ve switched from <a href=http://www.zenphoto.org>zenphoto</a> to <a href=http://jalbum.net>jalbum</a> — zenphoto didn’t really offer any decent support for displaying geo-tagged pictures, had at the point in time of switching too many security issues for my taste, and didn’t have such a slick looking theme as <a href=http://jalbum.net/en/skins/skin/Turtle/>jalbum’s turtle skin</a>.</p>
+<p>for a couple of sub-albums i wanted to make use of the background music feature offered by the turtle skin. naturally, just shoving in one of the thousands of MP3 that we have on our music players wouldn’t do as the license for those tracks didn’t allow that. a couple of google searches for “free music” later, i ended up on the fantastic <a href=http://freemusicarchive.org>freemusicarchive.org</a> page which has an interesting range of music licensed under one or the other <a href=http://http://creativecommons.org/>creative commons licenses</a>.</p>
+<p>browsing through their stuff, i quickly found two albums that i wanted to use: <a href=http://freemusicarchive.org/music/John_Harrison_with_the_Wichita_State_University_Chamber_Players/The_Four_Seasons_Vivaldi/>“the four seasons (vivaldi)”</a> album by <a href=http://freemusicarchive.org/music/John_Harrison_with_the_Wichita_State_University_Chamber_Players/>john harrison with the wichita state university chamber players</a> and <a href=http://freemusicarchive.org/music/Slinte/Cup_of_Tea/>“the cup of tea”</a> by <a href=http://freemusicarchive.org/music/Slinte/>sláinte</a>. adding both to jalbum was easy — download and drag-and-drop to the folders —, adding the license information was a bit more involving. adding a caption to the MP3s caused the turtle skin music playback to ignore the MP3s. i ended up adding conditional footer code via turtle’s <em>header and footer</em> tab:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>
+    &lt;ja:if exists=&#34;musicLicense&#34;&gt;
+        &lt;p&gt;music © ${musicYear} &lt;a href=&#34;${musicArtistURL}&#34;&gt;${musicArtist}&lt;/a&gt;, 
+           album &lt;a href=&#34;${musicAlbumURL}&#34;&gt;${musicAlbum}&lt;/a&gt; licensed under a 
+           &lt;a href=&#34;${musicLicenseURL}&#34;&gt;${musicLicense}&lt;/a&gt;&lt;/p&gt;
+    &lt;/ja:if&gt;
+
+</code></pre></div><p><a href=http://d2h.net/stuff/Screen-Shot-2012-01-02-at-12.03.56-.png title="adding user variables to jalbum folder"><img src=http://d2h.net/stuff/Screen-Shot-2012-01-02-at-12.03.56--188x188.png alt title="adding user variables to jalbum folder"></a>what this does is that if the user variable <code>musicLicense</code> is set, it then will include a music attribution in the footer of the sub-album page. you add user variable for a sub-album/folder in jalbum via the edit button for that and then selecting the user variable tab on the right hand side.</p>
+<p>here are the variable that i’m using:</p>
+<p>musicLicense
+name of the music license; for example, CreativeCommons-ByAttribution-ShareAlike
+musicLicenseURL
+URL for the license
+musicArtist
+name of the artist(s)
+musicArtistURL
+URL for the artist page
+musicAlbum
+name of the album
+musicAlbumURL
+URL for the album page
+musicYear
+copyright year</p>
+<p>the resulting footer then looks like this:</p>
+<p><a href=http://d2h.net/stuff/Screen-Shot-2012-01-02-at-12.08.02-.png title="jalbum media license foter"><img src=http://d2h.net/stuff/Screen-Shot-2012-01-02-at-12.08.02--494x188.png alt title="jalbum media license foter"></a></p>
+</div>
+</article>
+</main>
+</div>
+<footer>
+<hr>
+<p class=copyright>
+Copyright © 2022
+<a href=https://d2h.net/><strong>Dirk Husemann</strong></a>.
+This work is licensed under the
+<a href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA 4.0</a> license.
+</p>
+<p class=builtWith>
+Built with
+<a href=http://www.gohugo.io/>Hugo</a>,
+using the theme
+<a href=https://gitlab.com/ian-s-mcb/smigle-hugo-theme>smigle</a>,
+which was influenced by the theme
+<a href=https://github.com/sumnerevans/smol>smol</a>.
+</p>
+</footer>
+</body>
+</html>
